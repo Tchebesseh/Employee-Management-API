@@ -46,8 +46,8 @@ Suis ces étapes pour lancer l'API rapidement avec Docker Compose :
 
 1.  **Clone le dépôt** :
     ```bash
-       git clone https://github.com/AbdelRaoufkone/employee_management_api.git
-    cd employee_management_api
+       git clone https://github.com/Tchebesseh/Employee-Management-API.git
+       cd employee_management_api
     ```
     *Assure-toi d'être dans le répertoire racine du projet.*
 
