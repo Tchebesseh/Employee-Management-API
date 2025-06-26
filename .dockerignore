@@ -1,0 +1,16 @@
+target/*
+!target/*.jar
+
+# .mvn/       <-- Commentez ou supprimez cette ligne
+.idea/
+*.iml
+.vscode/
+.git/
+.gitignore
+Dockerfile
+docker-compose.yml
+docker-compose.test.yml
+# mvnw        <-- Commentez ou supprimez cette ligne
+# mvnw.cmd    <-- Commentez ou supprimez cette ligne
+.DS_Store
+**/build/

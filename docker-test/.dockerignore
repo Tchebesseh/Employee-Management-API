@@ -1,0 +1,2 @@
+# Ce fichier .dockerignore est spécifique au build de test.
+# Il est vide pour s'assurer que tous les fichiers du contexte (y compris mvnw et .mvn) sont inclus.

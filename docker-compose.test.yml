@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app-test:
+    build:
+      context: .
+      dockerfile: docker-test/Dockerfile.test
+    command: ["mvn", "test", "-Dspring.profiles.active=test"]
+    depends_on:
+      
+      postgres-test:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-test:5432/test_db
+      SPRING_DATASOURCE_USERNAME: testuser
+      SPRING_DATASOURCE_PASSWORD: testpassword
+      SPRING_PROFILES_ACTIVE: test
+      SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
+
+  postgres-test:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpassword
+    
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s 
+      timeout: 5s 
+      retries: 10 
+      start_period: 10s 

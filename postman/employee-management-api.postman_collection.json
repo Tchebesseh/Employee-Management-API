@@ -1,0 +1,542 @@
+{
+  "info": {
+    "name": "Employee Management API",
+    "_postman_id": "generated-id",
+    "description": "Collection complète pour tester l’API de gestion des employés",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Départements",
+      "item": [
+        {
+          "name": "Créer un département",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Informatique\",\n  \"managerId\": 1,\n  \"budget\": 5000000.0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/departements",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "departements"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Lister les départements",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/departements?page=0&size=5&sort=nom,asc",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "departements"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Détails d’un département",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/departements/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "departements",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Mettre à jour un département",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Informatique\",\n  \"managerId\": 1,\n  \"budget\": 5000000.0\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/departements/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "departements",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Supprimer un département",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/departements/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "departements",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtenir employés du département",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/departements/1/employes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "departements",
+                "1",
+                "employes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Analyse du budget",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/departements/1/rapport-budget",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "departements",
+                "1",
+                "rapport-budget"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Employés",
+      "item": [
+        {
+          "name": "Créer un employé",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prenom\": \"Abdel\",\n  \"nom\": \"Raouf\",\n  \"email\": \"abdel.raouf@example.com\",\n  \"departementId\": 1,\n  \"salaire\": 2500000.0,\n  \"dateEmbauche\": \"2025-06-23\",\n  \"statut\": \"Actif\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/employes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "employes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Lister les employés",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/employes",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "employes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Rechercher les employés par mail ou nom",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/employes?searchTerm=nom",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "employes"
+              ],
+               "query": [
+                {
+                  "key": "searchTerm",
+                  "value": "nom"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Détails d’un employé",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/employes/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "employes",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Mettre à jour un employé",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prenom\": \"Abdel\",\n  \"nom\": \"Raouf\",\n  \"email\": \"abdel.raouf@example.com\",\n  \"departementId\": 1,\n  \"salaire\": 2500000.0,\n  \"dateEmbauche\": \"2025-06-23\",\n  \"statut\": \"Actif\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/employes/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "employes",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Désactiver un employé",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/employes/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "employes",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Présences",
+      "item": [
+        {
+          "name": "Pointage d'arrivée",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employeId\": 1,\n  \"date\": \"2025-06-23\",\n  \"arrivee\": \"08:30\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/presences/arrivee",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "presences",
+                "arrivee"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Pointage de départ",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"presenceId\": 1,\n  \"depart\": \"17:30\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/presences/depart",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "presences",
+                "depart"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Rapport mensuel",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/presences/rapport/1?year=2024&month=6",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "presences",
+                "rapport",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "year",
+                  "value": "2024"
+                },
+                {
+                  "key": "month",
+                  "value": "6"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Résumé par département",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/presences/departement/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "presences",
+                "departement",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rapports & Analyses",
+      "item": [
+        {
+          "name": "Résumé salaires par département",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/rapports/resume-salaires",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "rapports",
+                "resume-salaires"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Tendance des présences",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/api/rapports/tendances-presences",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "rapports",
+                "tendances-presences"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Actuator Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{base_url}}/actuator/health",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "actuator",
+                "health"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
